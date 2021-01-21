@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url('./img/error.jpg');
+	background-size: 100vw 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.error-container {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	margin-top: 30vh;
+	width: 25vw;
+	height: 20vh;
+	border: 1px solid gray;
+	border-radius: 10px;
+	background-color: hsla(0, 0%, 50%, .45);
+}

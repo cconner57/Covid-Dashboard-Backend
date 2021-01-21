@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+.vscode
+bin
+dist
+lib
