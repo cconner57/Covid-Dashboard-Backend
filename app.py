@@ -26,7 +26,7 @@ def login():
             password = password
         )
         if user: 
-            return 'Successful Login'
+            return ('Successful Login', 200)
         return ('Failed Login', 401)
 
 @app.route('/signup', methods=['POST'])
@@ -39,7 +39,7 @@ def signup():
         password = password
     )
     db.session.commit()
-    return redirect('/')
+    return ('Successful Signup', 200)
 
 @app.route('/404')
 def show_404():
