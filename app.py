@@ -34,10 +34,11 @@ def signup():
     request_json = request.get_json()
     email = request_json.get('email')
     password = request_json.get('password')
-    user = User.signup(
+    user = User(
         email = email,
         password = password
     )
+    db.session.add(user)
     db.session.commit()
     return redirect('/')
 
