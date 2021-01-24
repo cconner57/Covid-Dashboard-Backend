@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, redirect, render_template, flash, session
 from flask_cors import CORS
 from models import db, connect_db, User
@@ -7,7 +8,7 @@ app = Flask(__name__)
 cors = CORS(app)
 
 app.config['CORS_HEADERS'] = 'Content-Type'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ydymxwzxcgssnv:472b08d91e33a9de0201b3a1ee83a7749f42b2389261fe4fe92b261ac4c3c615@ec2-18-205-122-145.compute-1.amazonaws.com:5432/d7asg4b74a1dh3'
+app.config['SQLALCHEMY_DATABASE_URI'] = (os.environ.get('DATABASE_URL', 'postgres:///Covid-19'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = "A secret"
